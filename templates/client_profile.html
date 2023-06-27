@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter Profile Page</title>
+  <link rel="stylesheet" type="text/css" href="twitter_style.css">
+</head>
+<body>
+    <div class="profile">
+        <img class="header-image" src="images/mountains.jpg" alt="Header Image">
+        <img class="profile-picture" src="images/face.jpg" alt="Profile Picture">
+        <div class="username" id="username"></div>
+        <p class="overview" id="industry">Event Organizer</p><br>
+        <h2 class="section-heading">Bio</h2>
+        <div class="bio">This is my bio, learn more about me! This is my bio, learn more about me! This is my bio, learn more about me! This is my bio, learn more about me! This is my bio, learn more about me! This is my bio, learn more about me!</div>
+        <div class="stats">
+          <!-- <div class="stat">
+            <div class="stat-count">1000</div>
+            <div class="stat-label">Followers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-count">500</div>
+            <div class="stat-label">Following</div>
+          </div> -->
+        </div>
+    
+        <div class="profile-details">
+          <h2 class="section-heading">Skills</h2>
+          <ul class="skills-list">
+            <li>Photography</li>
+            <li>Catalogue design</li>
+            <li>Adobe Photoshop</li>
+          </ul>
+
+          <h2 class="section-heading">Company</h2>
+          <ul class="recognition-item">
+            <li id="company"></li>
+          </ul>
+
+          <h2 class="section-heading">Contacts</h2>
+          <div class="recognition-item">
+            <p id="email">Email: </p>
+            <p id="phone">Phone: </p>
+            <p id="website">Website: </p>
+          </div>
+        </div>
+    </div>
+    
+    <script>
+      // JavaScript code for retrieving and populating form data
+      document.addEventListener('DOMContentLoaded', () => {
+        const firstName = sessionStorage.getItem('first-name');
+        const lastName = sessionStorage.getItem('last-name');
+        const email = sessionStorage.getItem('email');
+        const phone = sessionStorage.getItem('phone');
+        const company = sessionStorage.getItem('company');
+        const location = sessionStorage.getItem('location');
+        const industry = sessionStorage.getItem('industry');
+        const website = sessionStorage.getItem('website');
+
+        document.getElementById('username').textContent = firstName + ' ' + lastName;
+        document.getElementById('email').textContent = 'Email: ' + (email || '');
+        document.getElementById('phone').textContent = 'Phone: ' + (phone || '');
+        document.getElementById('company').textContent = company || '';
+        document.getElementById('industry').textContent = industry;
+        document.getElementById('website').textContent = 'Website: ' + website;
+        // Populate other fields as needed
+      });
+    </script>
+</body>
+</html>

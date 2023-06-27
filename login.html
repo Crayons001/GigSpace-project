@@ -1,23 +1,65 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <title>Login</title>
-    </head>
-    <body>
-        <h1>This is the login page</h1>
-        <p><a href="index.html">Go to homepage</a></p>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="templates/login.css">
+</head>
+<body>
+    <header class="header">
+        <h1>GigSpace</h1>
+    </header>
+    <div class="container">
+        <form action="login.php" method="post">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div id="error-message"></div>
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+            <div class="form-group">
+                <p class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+                <p class="forgot-password-link"><a href="forgotpassword.html">Forgot password?</a></p>
+            </div>
+        </form>
+    </div>
 
-        <div class="login-form">
-            <form action="" method="post">
-                <label for="email_input">Username or Email:</label>
-                <input type="text" name="email_input" id=""><br>
-                <label for="password_input">Password:</label>
-                <input type="password" name="password_input" id=""> <br><br>
-                <button>Log in</button>
-                <button>Sign Up</button>
-            </form>
-        </div>
-
-    </body>
+    <script>
+        // Get the error message element
+        var errorMessage = document.getElementById("error-message");
+      
+        // Function to display the error message
+        function displayErrorMessage(message) {
+          errorMessage.innerText = message;
+          errorMessage.style.display = "block";
+        }
+      
+        // Function to hide the error message
+        function hideErrorMessage() {
+          errorMessage.innerText = "";
+          errorMessage.style.display = "none";
+        }
+      
+        // Example usage:
+        // Call displayErrorMessage("Invalid username or password") when the login is unsuccessful
+        // Call hideErrorMessage() to hide the error message when needed
+    </script>
+    <script>
+        // Check if an error parameter is present in the URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var errorParam = urlParams.get("error");
+      
+        // If the error parameter is present, display the error message
+        if (errorParam === "1") {
+          displayErrorMessage("Invalid email or password");
+        }
+    </script>
+            
+</body>
 </html>

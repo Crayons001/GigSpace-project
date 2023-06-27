@@ -1,9 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Sign Up!</title>
-    </head>
-    <body>
-        <p><a href="index.html">Go to home page</a></p>
-    </body>
+<head>
+  <title>Client Registration</title>
+  <link rel="stylesheet" href="form_styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- <link rel="stylesheet" href="templates/header.css"> -->
+</head>
+<body>
+  <header class="header">
+    <h1 class="header-title">GigSpace</h1>
+  </header>
+
+  <div class="form-container">
+    <form action="../client_profile.html" method="post">
+      <div class="form-element">
+        <label for="first-name">First Name</label>
+        <input type="text" name="first-name" id="first-name">
+      </div>
+      <div class="form-element">
+        <label for="last-name">Last Name</label>
+        <input type="text" name="last-name" id="last-name">
+      </div>
+      <div class="form-element">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+      </div>
+      <div class="form-element">
+        <label for="phone">Phone</label>
+        <input type="phone" name="phone" id="phone">
+      </div>
+      <div class="form-element">
+        <label for="company">Company Name</label>
+        <input type="text" name="company" id="company">
+      </div>
+      <div class="form-element">
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location">
+      </div>
+      <div class="form-element">
+        <label for="industry">Job Title</label>
+        <input type="text" name="industry" id="industry">
+      </div>
+      <div class="form-element">
+        <label for="website">Website</label>
+        <input type="text" name="website" id="website">
+      </div>
+      <div class="form-element">
+        <label for="profile-picture">Profile Picture</label>
+        <input type="file" name="profile-picture" id="profile-picture">
+      </div>
+      <div class="form-element">
+        <input type="submit" name="submit" value="Sign Up">
+        <button type="button" id="cancel" onclick="cancelForm()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <br><br>
+
+  <script>
+    function cancelForm(){
+        window.location.href = "login.html";
+    }
+    
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent the form from submitting
+      
+      // Retrieve form data
+      const firstName = document.getElementById('first-name').value;
+      const lastName = document.getElementById('last-name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const company = document.getElementById('company').value;
+      const location = document.getElementById('location').value;
+      const industry = document.getElementById('industry').value;
+      const website = document.getElementById('website').value;
+      
+      // Store data in session storage
+      sessionStorage.setItem('first-name', firstName);
+      sessionStorage.setItem('last-name', lastName);
+      sessionStorage.setItem('email', email);
+      sessionStorage.setItem('phone', phone);
+      sessionStorage.setItem('company', company);
+      sessionStorage.setItem('location', location);
+      sessionStorage.setItem('industry', industry);
+      sessionStorage.setItem('website', website);
+      
+      // Redirect to client_profile.html
+      window.location.href = "client_profile.php";
+    });
+  </script>
+</body>
 </html>

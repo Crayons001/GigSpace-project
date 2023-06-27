@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter Profile Page</title>
+  <link rel="stylesheet" type="text/css" href="twitter_style.css">
+</head>
+<body>
+  <div class="profile">
+    <img class="header-image" src="images/lord_shiva-503.jpg" alt="Header Image">
+    <img class="profile-picture" src="images/wakanda.jpg" alt="Profile Picture">
+    <div class="username" id="username">John Doe</div>
+    <p class="overview" id="title">Graphic designer</p><br>
+    <h2 class="section-heading">Bio</h2>
+    <div class="bio" id="bio">This is my bio,learn more about me! This is my bio, learn more about me! This is my bio,learn more about me! This is my bio, learn more about me! This is my bio,learn more about me! This is my bio, learn more about me!</div>
+
+    <div class="profile-details">
+      <h2 class="section-heading">Skills</h2>
+      <ul id="skills" class="skills-list">
+        <li>Graphic Design</li>
+        <li>Catalogue design</li>
+        <li>Adobe Photoshop</li>
+      </ul>
+      <h2 class="section-heading">Portfolio</h2>
+      <p class="overview"><a href="portfolio.php">View Gallery</a></p>
+      <div class="carousel-container">
+        <div class="carousel">
+          <img src="images/lord_shiva-503.jpg" alt="Portfolio Item 1">
+          <img src="images/wakanda.jpg" alt="Portfolio Item 2">
+          <img src="images/escape.jpg" alt="Portfolio Item 3">
+          <img src="images/mountains.jpg" alt="Portfolio Item 4">
+          <img src="images/lord_shiva-503.jpg" alt="Portfolio Item 3">
+          <img src="images/wakanda.jpg" alt="Portfolio Item 4">
+          <img src="images/skull.jpg" alt="Portfolio Item 3">
+          <img src="images/roadmap.jpg" alt="Portfolio Item 4">
+        </div>
+        <button class="carousel-prev">&#8249;</button>
+        <button class="carousel-next">&#8250;</button>
+      </div>
+      <h2 class="section-heading">Work History</h2>
+      <div class="work-history-item">
+        <h3>Make a Mark Project</h3>
+        <p>Client: ABC Company</p>
+        <p>Completed: July 2022</p>
+        <p>Feedback: Excellent work! Highly recommended.</p>
+      </div>
+      <h2 class="section-heading">Education/Certification</h2>
+      <div class="education-item">
+        <h3>Safaricom Photography Tour</h3>
+        <p>Client: Safaricom PLC</p>
+        <p>Completed: July 2022</p>
+        <p>Feedback: Excellent work! Highly recommended.</p>
+      </div>
+      <h2 class="section-heading">Recognition/Awards</h2>
+      <div class="recognition-item">
+        <h3>Afrilens Magazine Cover Issue 597</h3>
+        <p>Client: ABC Company</p>
+        <p>Completed: July 2022</p>
+        <p>Feedback: Excellent work! Highly recommended.</p>
+      </div>
+      <h2 class="section-heading">Contacts</h2>
+      <div class="recognition-item">
+        <p id="email">Email: immanuelochi@gmail.com</p>
+        <p id="phone">Phone: +254796919697</p>
+        <!-- <p id="Instagram">Instagram: shem.lens</p> -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code for carousel functionality
+    const carousel = document.querySelector('.carousel');
+    const carouselPrev = document.querySelector('.carousel-prev');
+    const carouselNext = document.querySelector('.carousel-next');
+
+    carouselNext.addEventListener('click', () => {
+      carousel.scrollBy({
+        top: 0,
+        left: 220,
+        behavior: 'smooth'
+      });
+    });
+
+    carouselPrev.addEventListener('click', () => {
+      carousel.scrollBy({
+        top: 0,
+        left: -220,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+<script>
+
+        // JavaScript code for retrieving and populating form data
+        document.addEventListener('DOMContentLoaded', () => {
+        const firstName = sessionStorage.getItem('first-name');
+        const lastName = sessionStorage.getItem('last-name');
+        const email = sessionStorage.getItem('email');
+        const phone = sessionStorage.getItem('phone');
+        const profession = sessionStorage.getItem('profession');
+
+
+        document.getElementById('username').textContent = firstName + ' ' + lastName;
+        document.getElementById('email').textContent = 'Email: ' + (email || '');
+        document.getElementById('phone').textContent = 'Phone: ' + (phone || '');
+        document.getElementById('profession').textContent = profession || '';
+        // Populate other fields as needed
+      });
+
+</script>
+
+</body>
+</html>

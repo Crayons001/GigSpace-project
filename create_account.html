@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Account</title>
+        <link rel="stylesheet" href="form_styles.css">
+    </head>
+    <body>
+        
+        <a href="index.html">Go to homepage</a><br><br>
+        <form action="" method="post" class="create-account-form">
+            <div>
+                <span>I'm registering as a:</span>
+                <div>
+                    <label for="userType">Creator</label>
+                    <input type="radio" name="userType" id="" value="creator">
+                    <label for="userTypeClient">Client</label>
+                    <input type="radio" name="userType" id="" value="client">
+                </div>
+                <div class="form-element">
+                    <label for="userEmail">Email:</label>
+                    <input type="email" name="userEmail" id="">
+                </div>
+                <div class="form-element">
+                    <label for="">Enter Password</label>
+                    <input type="password" name="userPassword" id="">
+                </div>
+                <div class="form-element">
+                    <label for="">Confirm password</label>
+                    <input type="password" name="confirmPassword" id="">
+                </div>
+                <div class="form-buttons">
+                    <input type="submit" value="Continue" name="" id="submit-btn">
+                    <input type="submit" value="Cancel" name="" id="">
+                </div>
+            </div>
+        </form>
+
+        <script>
+            let btnSubmit = document.getElementById('submit-btn');
+            
+        </script>
+    </body>
+</html>
